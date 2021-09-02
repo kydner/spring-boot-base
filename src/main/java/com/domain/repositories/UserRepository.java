@@ -1,10 +1,11 @@
 package com.domain.repositories;
 
 
-import com.domain.models.entities.User;
+
+import com.domain.models.user.User;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface UserRepository extends JpaRepository<User, String> {
-  
-}
+@Repository
+public interface UserRepository extends JpaRepository<User, String> {}

@@ -5,7 +5,7 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import com.domain.interfaces.UserServiceInterface;
-import com.domain.models.entities.User;
+import com.domain.models.user.User;
 import com.domain.repositories.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;

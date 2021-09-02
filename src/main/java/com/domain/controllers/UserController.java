@@ -2,7 +2,7 @@ package com.domain.controllers;
 
 import java.util.List;
 
-import com.domain.models.entities.User;
+import com.domain.models.user.User;
 import com.domain.services.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;

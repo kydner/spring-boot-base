@@ -2,7 +2,7 @@ package com.domain.interfaces;
 
 import java.util.List;
 
-import com.domain.models.entities.User;
+import com.domain.models.user.User;
 
 
 public interface UserServiceInterface {
