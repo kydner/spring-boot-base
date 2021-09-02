@@ -2,19 +2,25 @@ package com.domain.services;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import com.domain.interfaces.UserServiceInterface;
-import com.domain.models.UserModel;
+import com.domain.models.entities.User;
 import com.domain.repositories.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
+@Transactional
 public class UserService implements UserServiceInterface {
 
   @Autowired
-  UserRepository repository;
+  private UserRepository repository;
+
   @Override
-  public UserModel create(UserModel userModel) {
-    return repository.save(userModel);
+  public User create(User user) {
+    return repository.save(user);
   }
 
   @Override
@@ -23,19 +29,19 @@ public class UserService implements UserServiceInterface {
   }
 
   @Override
-  public List<UserModel> findAll() {
+  public List<User> findAll() {
     return repository.findAll();
   }
 
   @Override
-  public UserModel findById(String id) {
+  public User findById(String id) {
     return repository.getById(id);
   }
 
   @Override
-  public UserModel update(String id, UserModel userModel) {
-    userModel.getId();
-    return repository.save(userModel);
+  public User update(String id, User user) {
+    user.getId();
+    return repository.save(user);
   }
   
 }

@@ -1,10 +1,12 @@
-package com.domain.models;
+package com.domain.models.entities;
 
+import java.io.Serializable;
 import java.util.UUID;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -12,8 +14,9 @@ import lombok.Setter;
 @Getter
 @Setter
 
-@Entity(name = "users")
-public class UserModel {
+@Entity
+@Table(name = "users")
+public class User implements Serializable {
   @Id
   private UUID id = UUID.randomUUID();
 

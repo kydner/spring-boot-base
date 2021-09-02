@@ -2,16 +2,17 @@ package com.domain.interfaces;
 
 import java.util.List;
 
-import com.domain.models.UserModel;
+import com.domain.models.entities.User;
+
 
 public interface UserServiceInterface {
-  List<UserModel> findAll();
+  List<User> findAll();
 
-  UserModel findById(String id);
+  User findById(String id);
 
-  UserModel update(String id, UserModel userModel);
+  User update(String id, User userModel);
 
-  UserModel create(UserModel userModel);
+  User create(User userModel);
   
   void deleteById(String id);
 }
