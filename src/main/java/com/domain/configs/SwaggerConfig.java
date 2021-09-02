@@ -1,10 +1,14 @@
 package com.domain.configs;
 
+import java.util.Collections;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
@@ -23,20 +27,18 @@ public class SwaggerConfig {
       .select()
       .apis(RequestHandlerSelectors.basePackage("com.domain.controllers"))
       .paths(PathSelectors.any())
-      .build();
-      // .apiInfo(apiInfo());
+      .build()
+      .apiInfo(apiInfo());
   }
 
-  // private ApiInfo apiInfo() {
-  //   ApiInfo apiInfo = new ApiInfo(
-  //     "title", 
-  //     "description", 
-  //     "version", 
-  //     "termsOfServiceUrl", 
-  //     new Contact("a","b","c"), 
-  //     "license", "licenseUrl", 
-  //     "vendorExtensions"
-  //   );
-  //   return apiInfo;
-  // }
+  private ApiInfo apiInfo() {
+    ApiInfo apiInfo = new ApiInfo("My Demo application", 
+      "Keterangan", "Api TOS", 
+      "Term Of Service", 
+      new Contact("kydner", "www.test.com", "kydner@gmail.com"), 
+      "Apache License", 
+      "www.apache.com", 
+      Collections.emptyList());
+    return apiInfo;
+  }
 }
