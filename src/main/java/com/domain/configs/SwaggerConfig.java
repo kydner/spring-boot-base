@@ -27,18 +27,18 @@ public class SwaggerConfig {
       .select()
       .apis(RequestHandlerSelectors.basePackage("com.domain.controllers"))
       .paths(PathSelectors.any())
-      .build();
-      // .apiInfo(apiInfo());
+      .build()
+      .apiInfo(apiInfo());
   }
 
-  // private ApiInfo apiInfo() {
-  //   ApiInfo apiInfo = new ApiInfo("My Demo application", 
-  //     "Keterangan", "Api TOS", 
-  //     "Term Of Service", 
-  //     new Contact("kydner", "www.test.com", "kydner@gmail.com"), 
-  //     "Apache License", 
-  //     "www.apache.com", 
-  //     Collections.emptyList());
-  //   return apiInfo;
-  // }
+  private ApiInfo apiInfo() {
+    ApiInfo apiInfo = new ApiInfo("My Demo application", 
+      "Keterangan", "Api TOS", 
+      "Term Of Service", 
+      new Contact("kydner", "www.test.com", "kydner@gmail.com"), 
+      "Apache License", 
+      "www.apache.com", 
+      Collections.emptyList());
+    return apiInfo;
+  }
 }
