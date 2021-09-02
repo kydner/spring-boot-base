@@ -23,7 +23,7 @@ public class UserController {
   @Autowired
   private UserService userService;
 
-  @GetMapping("/")
+  @GetMapping
   List<User> findAll() {
     return userService.findAll();
   }

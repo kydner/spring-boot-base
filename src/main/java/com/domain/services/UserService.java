@@ -8,14 +8,12 @@ import com.domain.interfaces.UserServiceInterface;
 import com.domain.models.user.User;
 import com.domain.repositories.UserRepository;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 @Transactional
 public class UserService implements UserServiceInterface {
 
-  @Autowired
   private UserRepository repository;
 
   @Override
